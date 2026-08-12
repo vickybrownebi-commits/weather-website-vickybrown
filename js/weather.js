@@ -62,29 +62,81 @@ const weatherData = [
         humidity: 80,
         wind: 7
     },
+
     {
         city: "Aba",
         temperature: 22,
         condition: "Rainy",
         humidity: 80,
-        wind: 7 
+        wind: 7
     },
+
     {
-        city: "Illorin",
+        city: "Ilorin",
         temperature: 22,
         condition: "Rainy",
         humidity: 80,
         wind: 7
     },
+
     {
-        city: "Ibadan",
+        city: "New York",
+        temperature: 22,
+        condition: "Rainy",
+        humidity: 80,
+        wind: 7
+    },
+
+    {
+        city: "London",
+        temperature: 27,
+        condition: "Sunny",
+        humidity: 78,
+        wind: 13
+    },
+
+    {
+        city: "Sokoto",
+        temperature: 25,
+        condition: "Cloudy",
+        humidity: 60,
+        wind: 8
+    },
+
+    {
+        city: "Niger",
+        temperature: 22,
+        condition: "Rainy",
+        humidity: 80,
+        wind: 7
+    },
+
+    {
+        city: "Akwa Ibom",
+        temperature: 22,
+        condition: "Rainy",
+        humidity: 80,
+        wind: 7
+    },
+
+    {
+        city: "Osun",
         temperature: 42,
         condition: "Rainy",
         humidity: 80,
         wind: 7
     },
+
     {
-        city: "New York",
+        city: "Washington",
+        temperature: 22,
+        condition: "Rainy",
+        humidity: 80,
+        wind: 7
+    },
+
+    {
+        city: "Warri",
         temperature: 22,
         condition: "Rainy",
         humidity: 80,
@@ -93,28 +145,75 @@ const weatherData = [
 ];
 
 
-// Get the container from HTML
-const weatherContainer = document.getElementById("weatherContainer");
-const searchForm = document.getElementById("searchForm");
-const searchInput = document.getElementById("searchInput");
-const searchMessage = document.getElementById("searchMessage");
+// GET ELEMENTS FROM HTML
+
+const weatherContainer =
+    document.getElementById("weatherContainer");
+
+const searchForm =
+    document.getElementById("searchForm");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const searchMessage =
+    document.getElementById("searchMessage");
 
 
-// Function to display weather
+// FUNCTION TO GET WEATHER ICON
+
+function getWeatherIcon(condition) {
+
+    const weatherCondition = condition.toLowerCase();
+
+    if (weatherCondition === "sunny") {
+
+        return "bi-sun";
+
+    } else if (weatherCondition === "cloudy") {
+
+        return "bi-cloud";
+
+    } else if (weatherCondition === "rainy") {
+
+        return "bi-cloud-rain";
+
+    } else {
+
+        return "bi-cloud-sun";
+    }
+}
+
+
+// FUNCTION TO DISPLAY WEATHER
+
 function displayWeather(data) {
 
+    // Clear previous cards
     weatherContainer.innerHTML = "";
 
+
+    // If no location is found
     if (data.length === 0) {
 
-        searchMessage.textContent = "Location not found.";
+        searchMessage.textContent =
+            "Location not found.";
 
         return;
     }
 
+
+    // Clear error message
     searchMessage.textContent = "";
 
+
+    // Create cards
     data.forEach(function(weather) {
+
+        // Get the correct icon
+        const weatherIcon =
+            getWeatherIcon(weather.condition);
+
 
         weatherContainer.innerHTML += `
 
@@ -124,7 +223,7 @@ function displayWeather(data) {
 
                     <div class="card-body text-center">
 
-                        <i class="bi bi-cloud-sun fs-1 text-primary"></i>
+                        <i class="bi ${weatherIcon} fs-1 text-primary"></i>
 
                         <h3 class="card-title mt-3">
                             ${weather.city}
@@ -143,6 +242,7 @@ function displayWeather(data) {
                         <div class="d-flex justify-content-around">
 
                             <div>
+
                                 <i class="bi bi-droplet text-primary"></i>
 
                                 <p class="mb-0">
@@ -152,9 +252,12 @@ function displayWeather(data) {
                                 <small>
                                     Humidity
                                 </small>
+
                             </div>
 
+
                             <div>
+
                                 <i class="bi bi-wind text-success"></i>
 
                                 <p class="mb-0">
@@ -164,6 +267,7 @@ function displayWeather(data) {
                                 <small>
                                     Wind
                                 </small>
+
                             </div>
 
                         </div>
@@ -179,20 +283,27 @@ function displayWeather(data) {
 }
 
 
-// Display all weather when page loads
+// DISPLAY ALL WEATHER WHEN PAGE LOADS
+
 displayWeather(weatherData);
 
 
-// SEARCH
+// SEARCH FUNCTION
+
 searchForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    const searchValue = searchInput.value.trim().toLowerCase();
 
+    const searchValue =
+        searchInput.value.trim().toLowerCase();
+
+
+    // Empty search
     if (searchValue === "") {
 
-        searchMessage.textContent = "Please enter a location.";
+        searchMessage.textContent =
+            "Please enter a location.";
 
         displayWeather(weatherData);
 
@@ -200,13 +311,18 @@ searchForm.addEventListener("submit", function(event) {
     }
 
 
-    const filteredWeather = weatherData.filter(function(weather) {
+    // Find matching cities
+    const filteredWeather =
+        weatherData.filter(function(weather) {
 
-        return weather.city.toLowerCase().includes(searchValue);
+            return weather.city
+                .toLowerCase()
+                .includes(searchValue);
 
-    });
+        });
 
 
+    // Display results
     displayWeather(filteredWeather);
 
 });
