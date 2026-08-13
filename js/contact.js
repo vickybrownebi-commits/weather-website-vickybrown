@@ -170,3 +170,53 @@ contactForm.addEventListener("submit", function (event) {
     }
 
 });
+// DARK / LIGHT MODE
+
+// DARK / LIGHT MODE
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+const themeIcon =
+    document.getElementById("themeIcon");
+
+
+// Check saved theme
+
+if (localStorage.getItem("theme") === "dark") {
+
+    document.body.classList.add("dark-mode");
+
+    themeIcon.className =
+        "bi bi-sun-fill";
+}
+
+
+// Toggle theme
+
+themeToggle.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        // Dark mode → show sun
+
+        themeIcon.className =
+            "bi bi-sun-fill";
+
+        localStorage.setItem("theme", "dark");
+
+    } else {
+
+        // Light mode → show moon
+
+        themeIcon.className =
+            "bi bi-moon-stars-fill";
+
+        localStorage.setItem("theme", "light");
+
+    }
+
+});

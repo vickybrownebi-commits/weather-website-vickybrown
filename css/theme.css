@@ -1,0 +1,173 @@
+/* ========================= */
+/* DARK / LIGHT BUTTON */
+/* ========================= */
+
+#themeToggle {
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+
+    transform: rotate(15deg) scale(1.08);
+
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ========================= */
+/* GENERAL DARK MODE */
+/* ========================= */
+
+body.dark-mode {
+
+    background-color: #101828 !important;
+
+    color: white !important;
+}
+
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+
+    color: white !important;
+}
+
+
+/* ========================= */
+/* LIGHT SECTIONS */
+/* ========================= */
+
+body.dark-mode .bg-light {
+
+    background-color: #182230 !important;
+
+    color: white !important;
+}
+
+
+/* ========================= */
+/* WHITE SECTIONS */
+/* ========================= */
+
+body.dark-mode .bg-white {
+
+    background-color: #111827 !important;
+}
+
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
+
+body.dark-mode .card {
+
+    background-color: #1e293b !important;
+
+    color: white !important;
+
+    border-color: #334155 !important;
+}
+
+
+/* ========================= */
+/* CARD TEXT */
+/* ========================= */
+
+body.dark-mode .card p,
+body.dark-mode .card small,
+body.dark-mode .card h3,
+body.dark-mode .card h4,
+body.dark-mode .card h5 {
+
+    color: white !important;
+}
+
+
+/* ========================= */
+/* FORMS */
+/* ========================= */
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+
+    background-color: #1f2937 !important;
+
+    color: white !important;
+
+    border-color: #475569 !important;
+}
+
+
+body.dark-mode .form-control::placeholder {
+
+    color: #94a3b8 !important;
+}
+
+
+/* ========================= */
+/* MODALS */
+/* ========================= */
+
+body.dark-mode .modal-content {
+
+    background-color: #1e293b;
+
+    color: white;
+}
+
+
+body.dark-mode .modal-content .form-label {
+
+    color: white;
+}
+
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+body.dark-mode footer {
+
+    background-color: #020617 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 991px) {
+
+    #themeToggle {
+
+        margin-top: 10px;
+
+    }
+
+}

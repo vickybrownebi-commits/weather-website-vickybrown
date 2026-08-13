@@ -2,254 +2,456 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contact Us | WeatherNow</title>
 
     <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="contact.css">
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="css/contact.css">
+
+    <!-- Theme CSS - keep this after contact.css -->
+    <link rel="stylesheet" href="css/theme.css">
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
 
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-        <!-- LOGO -->
-        <a class="navbar-brand fw-bold" href="index.html"><img src="png/Group 4.png" alt="" srcset="">
-            <i class="bi bi-cloud-sun me-2"></i>
-            WeatherNow
-        </a>
+        <div class="container">
 
-        <!-- MOBILE MENU BUTTON -->
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainMenu"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <!-- LOGO -->
 
-        <!-- NAVIGATION -->
-        <div class="collapse navbar-collapse" id="mainMenu">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
 
-            <ul class="navbar-nav mx-auto">
+                <img src="png/Group 4.png" alt="WeatherNow Logo" width="40" class="me-2">
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
-                        Home
-                    </a>
-                </li>
+                <i class="bi bi-cloud-sun me-2"></i>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="weather.html">
-                        Weather
-                    </a>
-                </li>
+                WeatherNow
 
-                <li class="nav-item">
-                    <a class="nav-link" href="posts.html">
-                        Weather Posts
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
+            </a>
 
 
-            <!-- LOGIN / SIGN UP -->
+            <!-- MOBILE BUTTON -->
 
-            <div class="d-flex gap-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
 
-                <button
-                    class="btn btn-outline-light"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginModal"
-                >
-                    Login
-                </button>
+                <span class="navbar-toggler-icon"></span>
 
-                <button
-                    class="btn btn-warning"
-                    data-bs-toggle="modal"
-                    data-bs-target="#signupModal"
-                >
-                    Sign Up
-                </button>
+            </button>
+
+
+            <!-- MENU -->
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="weather.html">
+                            Weather
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="posts.html">
+                            Weather Posts
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="contact.html">
+                            Contact
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="d-flex align-items-center gap-2">
+
+
+                    <!-- THEME BUTTON -->
+
+                    <button id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+
+                        <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+
+                    </button>
+
+
+                    <!-- LOGIN -->
+
+                    <button class="btn btn-outline-light" type="button" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        Login
+                    </button>
+
+
+                    <!-- SIGN UP -->
+
+                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
+                        Sign Up
+                    </button>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</nav>
+    </nav>
 
 
-    
 
-        <!-- <a class="navbar-brand fw-bold" href="index.html"> -->
-            <!-- WeatherNow -->
-        <!-- </a> -->
+    <!-- ========================= -->
+    <!-- CONTACT HERO -->
+    <!-- ========================= -->
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <section class="contact-hero">
 
-        <div class="collapse navbar-collapse" id="menu">
+        <div class="container text-center">
 
-            <ul class="navbar-nav ms-auto">
+            <div class="weather-icon">
+                🌦️
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        Home
-                    </a>
-                </li>
+            <h1 class="fw-bold">
+                Let's Talk Weather
+            </h1>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="weather.html">
-                        Weather
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="posts.html">
-                        Posts
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
+            <p class="lead mb-0">
+                Have a question, weather concern or suggestion?
+                We'd love to hear from you.
+            </p>
 
         </div>
 
+    </section>
 
 
-<!-- HERO -->
 
-<section class="contact-hero">
+    <!-- ========================= -->
+    <!-- CONTACT SECTION -->
+    <!-- ========================= -->
 
-    <div class="container text-center">
+    <section class="container py-5">
 
-        <div class="weather-icon">
-            ☁️
-        </div>
+        <div class="card contact-card shadow-lg border-0">
 
-        <h1 class="fw-bold">
-            Let's Talk Weather
-        </h1>
-
-        <p class="lead mb-0">
-            Have a question, weather concern or suggestion?
-            We'd love to hear from you.
-        </p>
-
-    </div>
-
-</section>
+            <div class="row g-0">
 
 
-<!-- CONTACT SECTION -->
+                <!-- ========================= -->
+                <!-- LEFT SIDE -->
+                <!-- ========================= -->
 
-<section class="container">
+                <div class="col-lg-5">
 
-    <div class="card contact-card shadow-lg">
+                    <div class="contact-info h-100">
 
-        <div class="row g-0">
+                        <h2 class="fw-bold mb-4">
+                            Weather Support
+                        </h2>
 
-            <!-- LEFT SIDE -->
-
-            <div class="col-lg-5">
-
-                <div class="contact-info h-100">
-
-                    <h2 class="fw-bold mb-4">
-                        Weather Support
-                    </h2>
-
-                    <p>
-                        Whether you need help understanding a forecast,
-                        want to report a weather issue, or simply have
-                        a suggestion, send us a message.
-                    </p>
+                        <p>
+                            Whether you need help understanding a forecast,
+                            want to report a weather issue, or simply have
+                            a suggestion, send us a message.
+                        </p>
 
 
-                    <div class="d-flex align-items-center mt-4">
+                        <!-- PHONE -->
 
-                        <i class="bi bi-telephone-fill me-3"></i>
+                        <div class="d-flex align-items-center mt-4">
 
-                        <div>
-                            <small><img src="png/WhatsApp Logo Desktop Computer Icons PNG.jpg" class="img-fluid" style="width: 20px;"alt="whatsapp" srcset="">   Contact :</small>
+                            <i class="bi bi-telephone-fill me-3 fs-4"></i>
 
-                            <p class="mb-0 fw-bold">
-                                0812199993
-                            </p>
+                            <div>
+
+                                <small>
+                                    Contact
+                                </small>
+
+                                <p class="mb-0 fw-bold">
+                                    0812199993
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="d-flex align-items-center mt-4">
+
+                            <i class="bi bi-envelope-fill me-3 fs-4"></i>
+
+                            <div>
+
+                                <small>
+                                    Email
+                                </small>
+
+                                <p class="mb-0 fw-bold">
+                                    vickybrownebi@gmail.com
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MISSION -->
+
+                        <div class="d-flex align-items-start mt-4">
+
+                            <i class="bi bi-cloud-sun-fill me-3 fs-4"></i>
+
+                            <div>
+
+                                <small>
+                                    Our Mission
+                                </small>
+
+                                <p class="mb-0 fw-bold">
+
+                                    Making weather simple and bringing
+                                    forecast news to you before anyone else
+                                    is our priority. We want to help make
+                                    your cloudy day brighter.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-5 text-center">
+
+                            <span style="font-size: 70px;">
+                                🌤️
+                            </span>
+
                         </div>
 
                     </div>
 
+                </div>
 
-                    <div class="d-flex align-items-center mt-4">
 
-                        <i class="bi bi-envelope-fill me-3"></i>
 
-                        <div>
-                            <small> <img src="png/Gmail Logo Vector – SVG, EPS, PNG Free Download.jpg" class="img-fluid" style="width: 20px;" alt="email" srcset="">  Email  :</small>
+                <!-- ========================= -->
+                <!-- RIGHT SIDE FORM -->
+                <!-- ========================= -->
 
-                            <p class="mb-0 fw-bold">
-                                vickybrownebi@gmail.com
-                            </p>
+                <div class="col-lg-7">
+
+                    <div class="form-area">
+
+                        <h2 class="fw-bold mb-2">
+                            Send Us a Message
+                        </h2>
+
+                        <p class="text-muted mb-4">
+                            Fill in the form and we'll get back to you.
+                        </p>
+
+
+                        <!-- SUCCESS MESSAGE -->
+
+                        <div id="successMessage" class="alert alert-success d-none">
+
+                            <i class="bi bi-check-circle-fill me-2"></i>
+
+                            Your message has been sent successfully!
+
                         </div>
 
-                    </div>
+
+                        <!-- FORM -->
+
+                        <form id="contactForm" novalidate>
 
 
-                    <div class="d-flex align-items-center mt-4">
+                            <!-- NAME -->
 
-                        <i class="bi bi-cloud-sun-fill me-3"></i>
+                            <div class="mb-3">
 
-                        <div>
-                            <small>Our mission</small>
+                                <label for="name" class="form-label">
+                                    Full Name
+                                </label>
 
-                            <p class="mb-0 fw-bold">
-                                Making weather simple bringing weather forcast news to yo before any one its our sole priority we have the best forecast news and hope to make ur cloudy day be bright
-                            </p>
-                        </div>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your full name"
+                                    required>
 
-                    </div>
+                                <div id="nameError" class="text-danger small mt-1"></div>
+
+                            </div>
 
 
-                    <div class="mt-5 text-center">
+                            <!-- PHONE -->
 
-                        <!-- <span style="font-size: 70px;"> -->
-                            <!-- 🌦️ -->
-                        <!-- </span> -->
+                            <div class="mb-3">
+
+                                <label for="phone" class="form-label">
+                                    Phone Number
+                                </label>
+
+                                <input type="tel" class="form-control" id="phone" placeholder="e.g. 0812199993"
+                                    required>
+
+                                <div id="phoneError" class="text-danger small mt-1"></div>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="mb-3">
+
+                                <label for="email" class="form-label">
+                                    Email Address
+                                </label>
+
+                                <input type="email" class="form-control" id="email" placeholder="example@email.com"
+                                    required>
+
+                                <div id="emailError" class="text-danger small mt-1"></div>
+
+                            </div>
+
+
+                            <!-- CITY -->
+
+                            <div class="mb-3">
+
+                                <label for="city" class="form-label">
+                                    Your City
+                                </label>
+
+                                <input type="text" class="form-control" id="city" placeholder="e.g. Lagos" required>
+
+                                <div id="cityError" class="text-danger small mt-1"></div>
+
+                            </div>
+
+
+                            <!-- SUBJECT -->
+
+                            <div class="mb-3">
+
+                                <label for="subject" class="form-label">
+                                    What can we help with?
+                                </label>
+
+                                <select class="form-select" id="subject" required>
+
+                                    <option value="">
+                                        Select an option
+                                    </option>
+
+                                    <option value="weather">
+                                        Weather Information
+                                    </option>
+
+                                    <option value="forecast">
+                                        Forecast Question
+                                    </option>
+
+                                    <option value="feedback">
+                                        Website Feedback
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                                <div id="subjectError" class="text-danger small mt-1"></div>
+
+                            </div>
+
+
+                            <!-- MESSAGE -->
+
+                            <div class="mb-3">
+
+                                <label for="message" class="form-label">
+                                    Message
+                                </label>
+
+                                <textarea class="form-control" id="message" rows="4"
+                                    placeholder="Tell us what's on your mind..." required></textarea>
+
+                                <div id="messageError" class="text-danger small mt-1"></div>
+
+                            </div>
+
+
+                            <!-- AGREEMENT -->
+
+                            <div class="form-check mb-4">
+
+                                <input class="form-check-input" type="checkbox" id="agreement" required>
+
+                                <label class="form-check-label" for="agreement">
+                                    I confirm that the information provided
+                                    is correct.
+                                </label>
+
+                                <div id="agreementError" class="text-danger small mt-1"></div>
+
+                            </div>
+
+
+                            <!-- SEND -->
+
+                            <button type="submit" class="btn btn-weather">
+
+                                <i class="bi bi-send-fill me-2"></i>
+
+                                Send Message
+
+                            </button>
+
+                        </form>
 
                     </div>
 
@@ -257,231 +459,66 @@
 
             </div>
 
+        </div>
 
-            <!-- RIGHT SIDE FORM -->
-
-            <div class="col-lg-7">
-
-                <div class="form-area">
-
-                    <h2 class="fw-bold mb-2">
-                        Send Us a Message
-                    </h2>
-
-                    <p class="text-muted mb-4">
-                        Fill in the form and we'll get back to you.
-                    </p>
+    </section>
 
 
-                    <!-- SUCCESS MESSAGE -->
 
-                    <div
-                        id="successMessage"
-                        class="alert alert-success d-none"
-                    >
-                        <i class="bi bi-check-circle-fill"></i>
+    <!-- ========================= -->
+    <!-- LOGIN MODAL -->
+    <!-- ========================= -->
 
-                        Your message has been sent successfully!
-                    </div>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
 
+        <div class="modal-dialog modal-dialog-centered">
 
-                    <form id="contactForm" novalidate>
+            <div class="modal-content">
 
-                        <!-- NAME -->
+                <div class="modal-header bg-primary text-white">
 
-                        <div class="mb-3">
+                    <h5 class="modal-title">
+                        Welcome Back ☁️
+                    </h5>
 
-                            <label for="name" class="form-label">
-                                Full Name
-                            </label>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
 
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="name"
-                                placeholder="Enter your full name"
-                            >
-
-                            <div
-                                id="nameError"
-                                class="text-danger small mt-1"
-                            ></div>
-
-                        </div>
+                </div>
 
 
-                        <!-- PHONE -->
+                <div class="modal-body">
+
+                    <form id="loginForm">
 
                         <div class="mb-3">
 
-                            <label for="phone" class="form-label">
-                                Phone Number
-                            </label>
-
-                            <input
-                                type="tel"
-                                class="form-control"
-                                id="phone"
-                                placeholder="e.g. 0812199993"
-                            >
-
-                            <div
-                                id="phoneError"
-                                class="text-danger small mt-1"
-                            ></div>
-
-                        </div>
-
-
-                        <!-- EMAIL -->
-
-                        <div class="mb-3">
-
-                            <label for="email" class="form-label">
+                            <label for="loginEmail" class="form-label">
                                 Email Address
                             </label>
 
-                            <input
-                                type="email"
-                                class="form-control"
-                                id="email"
-                                placeholder="example@email.com"
-                            >
-
-                            <div
-                                id="emailError"
-                                class="text-danger small mt-1"
-                            ></div>
+                            <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email"
+                                required>
 
                         </div>
 
-
-                        <!-- CITY -->
 
                         <div class="mb-3">
 
-                            <label for="city" class="form-label">
-                                Your City
+                            <label for="loginPassword" class="form-label">
+                                Password
                             </label>
 
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="city"
-                                placeholder="e.g. Lagos"
-                            >
-
-                            <div
-                                id="cityError"
-                                class="text-danger small mt-1"
-                            ></div>
+                            <input type="password" id="loginPassword" class="form-control"
+                                placeholder="Enter your password" required>
 
                         </div>
 
 
-                        <!-- SUBJECT -->
-
-                        <div class="mb-3">
-
-                            <label for="subject" class="form-label">
-                                What can we help with?
-                            </label>
-
-                            <select
-                                class="form-select"
-                                id="subject"
-                            >
-
-                                <option value="">
-                                    Select an option
-                                </option>
-
-                                <option value="weather">
-                                    Weather Information
-                                </option>
-
-                                <option value="forecast">
-                                    Forecast Question
-                                </option>
-
-                                <option value="feedback">
-                                    Website Feedback
-                                </option>
-
-                                <option value="other">
-                                    Other
-                                </option>
-
-                            </select>
-
-                            <div
-                                id="subjectError"
-                                class="text-danger small mt-1"
-                            ></div>
-
-                        </div>
+                        <div id="loginMessage" class="small mb-3"></div>
 
 
-                        <!-- MESSAGE -->
-
-                        <div class="mb-3">
-
-                            <label for="message" class="form-label">
-                                Message
-                            </label>
-
-                            <textarea
-                                class="form-control"
-                                id="message"
-                                rows="4"
-                                placeholder="Tell us what's on your mind..."
-                            ></textarea>
-
-                            <div
-                                id="messageError"
-                                class="text-danger small mt-1"
-                            ></div>
-
-                        </div>
-
-
-                        <!-- CHECKBOX -->
-
-                        <div class="form-check mb-4">
-
-                            <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="agreement"
-                            >
-
-                            <label
-                                class="form-check-label"
-                                for="agreement"
-                            >
-                                I confirm that the information provided
-                                is correct.
-                            </label>
-
-                            <div
-                                id="agreementError"
-                                class="text-danger small mt-1"
-                            ></div>
-
-                        </div>
-
-
-                        <!-- BUTTON -->
-
-                        <button
-                            type="submit"
-                            class="btn btn-weather"
-                        >
-
-                            <i class="bi bi-send-fill me-2"></i>
-
-                            Send Message
-
+                        <button type="submit" class="btn btn-primary w-100">
+                            Login
                         </button>
 
                     </form>
@@ -494,202 +531,91 @@
 
     </div>
 
-</section>
-
-<div
-    class="modal fade"
-    id="loginModal"
-    tabindex="-1"
-    aria-hidden="true"
->
-
-    <div class="modal-dialog modal-dialog-centered">
-
-        <div class="modal-content">
-
-            <div class="modal-header bg-primary text-white">
-
-                <h5 class="modal-title">
-                    Welcome Back ☁️
-                </h5>
-
-                <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                ></button>
-
-            </div>
 
 
-            <div class="modal-body">
+    <!-- ========================= -->
+    <!-- SIGN UP MODAL -->
+    <!-- ========================= -->
 
-                <form id="loginForm">
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
 
-                    <div class="mb-3">
+        <div class="modal-dialog modal-dialog-centered">
 
-                        <label class="form-label">
-                            Email Address
-                        </label>
+            <div class="modal-content">
 
-                        <input
-                            type="email"
-                            id="loginEmail"
-                            class="form-control"
-                            placeholder="Enter your email"
-                        >
+                <div class="modal-header bg-primary text-white">
 
-                    </div>
+                    <h5 class="modal-title">
+                        Join WeatherNow 🌦️
+                    </h5>
 
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
 
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="loginPassword"
-                            class="form-control"
-                            placeholder="Enter your password"
-                        >
-
-                    </div>
+                </div>
 
 
-                    <div
-                        id="loginMessage"
-                        class="small mb-3"
-                    ></div>
+                <div class="modal-body">
+
+                    <form id="signupForm">
+
+                        <div class="mb-3">
+
+                            <label for="signupName" class="form-label">
+                                Full Name
+                            </label>
+
+                            <input type="text" id="signupName" class="form-control" placeholder="Enter your name"
+                                required>
+
+                        </div>
 
 
-                    <button
-                        type="submit"
-                        class="btn btn-primary w-100"
-                    >
-                        Login
-                    </button>
+                        <div class="mb-3">
 
-                </form>
+                            <label for="signupEmail" class="form-label">
+                                Email Address
+                            </label>
 
-            </div>
+                            <input type="email" id="signupEmail" class="form-control" placeholder="Enter your email"
+                                required>
 
-        </div>
-
-    </div>
-
-</div>
-<!-- SIGN UP MODAL -->
-
-<div
-    class="modal fade"
-    id="signupModal"
-    tabindex="-1"
-    aria-hidden="true"
->
-
-    <div class="modal-dialog modal-dialog-centered">
-
-        <div class="modal-content">
-
-            <div class="modal-header bg-tertiary text-white">
-
-                <h5 class="modal-title">
-                    Join WeatherNow 🌦️
-                </h5>
-
-                <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                ></button>
-
-            </div>
+                        </div>
 
 
-            <div class="modal-body">
+                        <div class="mb-3">
 
-                <form id="signupForm">
+                            <label for="signupPassword" class="form-label">
+                                Password
+                            </label>
 
-                    <div class="mb-3">
+                            <input type="password" id="signupPassword" class="form-control"
+                                placeholder="Create a password" required>
 
-                        <label class="form-label">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="signupName"
-                            class="form-control"
-                            placeholder="Enter your name"
-                        >
-
-                    </div>
+                        </div>
 
 
-                    <div class="mb-3">
+                        <div class="mb-3">
 
-                        <label class="form-label">
-                            Email Address
-                        </label>
+                            <label for="confirmPassword" class="form-label">
+                                Confirm Password
+                            </label>
 
-                        <input
-                            type="email"
-                            id="signupEmail"
-                            class="form-control"
-                            placeholder="Enter your email"
-                        >
+                            <input type="password" id="confirmPassword" class="form-control"
+                                placeholder="Confirm your password" required>
 
-                    </div>
+                        </div>
 
 
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="signupPassword"
-                            class="form-control"
-                            placeholder="Create a password"
-                        >
-
-                    </div>
+                        <div id="signupMessage" class="small mb-3"></div>
 
 
-                    <div class="mb-3">
+                        <button type="submit" class="btn btn-warning w-100">
+                            Create Account
+                        </button>
 
-                        <label class="form-label">
-                            Confirm Password
-                        </label>
+                    </form>
 
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            class="form-control"
-                            placeholder="Confirm your password"
-                        >
-
-                    </div>
-
-
-                    <div
-                        id="signupMessage"
-                        class="small mb-3"
-                    ></div>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-warning w-100"
-                    >
-                        Create Account
-                    </button>
-
-                </form>
+                </div>
 
             </div>
 
@@ -697,33 +623,57 @@
 
     </div>
 
-</div>
-<!-- Footer -->
-
-<!-- FOOTER -->
-
-<footer class="bg-primary text-white text-center py-4">
-
-    <p class="mb-1">
-        WeatherNow
-    </p>
-
-    <small>
-        © 2026 WeatherNow | Making weather simple.
-    </small>
-
-</footer>
 
 
-<!-- Bootstrap JS -->
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-</script>
+    <footer class="bg-primary text-white text-center py-4">
 
-<!-- Contact JavaScript -->
+        <div class="container">
 
-<script src="js/contact.js"></script>
+            <p class="mb-1 fw-bold">
+                WeatherNow
+            </p>
+
+            <small>
+                © 2026 WeatherNow | Making weather simple.
+            </small>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================= -->
+    <!-- BOOTSTRAP JS -->
+    <!-- ========================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- ========================= -->
+    <!-- THEME JS -->
+    <!-- ========================= -->
+
+    <script src="js/theme.js"></script>
+
+
+    <!-- ========================= -->
+    <!-- AUTH JS -->
+    <!-- ========================= -->
+
+    <script src="js/auth.js"></script>
+
+
+    <!-- ========================= -->
+    <!-- CONTACT JS -->
+    <!-- ========================= -->
+
+    <script src="js/contact.js"></script>
+
 
 </body>
 

@@ -1,0 +1,157 @@
+/* ========================= */
+/* THEME BUTTON */
+/* ========================= */
+
+#themeToggle {
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 200%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+
+#themeToggle:hover {
+
+    transform: rotate(15deg) scale(1.08);
+
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ========================= */
+/* DARK MODE */
+/* ========================= */
+
+body.dark-mode {
+
+    background-color: #101828 !important;
+
+    color: white !important;
+}
+
+
+/* PAGE TITLE */
+
+body.dark-mode .bg-light {
+
+    background-color: #182230 !important;
+
+    color: white !important;
+}
+
+
+body.dark-mode .bg-light h1 {
+
+    color: white !important;
+}
+
+
+body.dark-mode .bg-light p {
+
+    color: #cbd5e1 !important;
+}
+
+
+/* SEARCH SECTION */
+
+body.dark-mode .bg-white {
+
+    background-color: #111827 !important;
+}
+
+
+/* SEARCH INPUT */
+
+body.dark-mode .form-control {
+
+    background-color: #1f2937 !important;
+
+    color: white !important;
+
+    border-color: #475569 !important;
+}
+
+
+body.dark-mode .form-control::placeholder {
+
+    color: #94a3b8 !important;
+}
+
+
+/* WEATHER CARDS */
+
+body.dark-mode .card {
+
+    background-color: #1e293b !important;
+
+    color: white !important;
+
+    border-color: #334155 !important;
+}
+
+
+/* CARD TEXT */
+
+body.dark-mode .card h2,
+body.dark-mode .card h3,
+body.dark-mode .card p,
+body.dark-mode .card small {
+
+    color: white !important;
+}
+
+
+/* MUTED TEXT */
+
+body.dark-mode .text-muted {
+
+    color: #cbd5e1 !important;
+}
+
+
+/* LINES */
+
+body.dark-mode hr {
+
+    border-color: #475569 !important;
+}
+
+
+/* FOOTER */
+
+body.dark-mode footer {
+
+    background-color: #020617 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 991px) {
+
+    #themeToggle {
+
+        margin-top: 10px;
+
+    }
+
+}

@@ -2,355 +2,282 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Weather Posts | WeatherNow</title>
 
+
     <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/post.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/theme.css">
+
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-    <div class="container">
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
 
-        <!-- LOGO -->
-        <a class="navbar-brand fw-bold" href="index.html"><img src="png/Group 4.png" alt="" srcset="">
-            
-            WeatherNow
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-        <!-- MOBILE MENU BUTTON -->
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainMenu"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- NAVIGATION -->
-        <div class="collapse navbar-collapse" id="mainMenu">
-
-            <ul class="navbar-nav mx-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="weather.html">
-                        Weather
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="posts.html">
-                        Weather Posts
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
+        <div class="container">
 
 
-            <!-- LOGIN / SIGN UP -->
+            <!-- LOGO -->
 
-            <div class="d-flex gap-2">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
 
-                <button
-                    class="btn btn-outline-light"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginModal"
-                >
-                    Login
-                </button>
+                <img src="png/Group 4.png" alt="WeatherNow Logo" width="40" class="me-2">
 
-                <button
-                    class="btn btn-warning"
-                    data-bs-toggle="modal"
-                    data-bs-target="#signupModal"
-                >
-                    Sign Up
-                </button>
+                <i class="bi bi-cloud-sun me-2"></i>
+
+                WeatherNow
+
+            </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+
+                <!-- MENU -->
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="weather.html">
+                            Weather
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" aria-current="page" href="posts.html">
+                            Weather Posts
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="d-flex align-items-center gap-2">
+
+
+                    <!-- DARK / LIGHT BUTTON -->
+
+                    <div class="theme-switch">
+
+                        <button id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+
+                            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <button class="btn btn-outline-light" type="button" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        Login
+                    </button>
+
+
+                    <!-- SIGN UP -->
+
+                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
+                        Sign Up
+                    </button>
+
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</nav>
+    </nav>
 
 
-<!-- PAGE HEADER -->
-<section class="bg-light py-5">
 
-    <div class="container text-center">
+    <!-- ========================= -->
+    <!-- PAGE HEADER -->
+    <!-- ========================= -->
 
-        <h1 class="fw-bold">
-            Weather Posts
-        </h1>
+    <section class="bg-light py-5">
 
-        <p class="text-muted">
-            Read the latest weather information and updates.
-        </p>
+        <div class="container text-center">
 
-    </div>
+            <h1 class="fw-bold">
+                Weather Posts
+            </h1>
 
-</section>
-
-
-<!-- POSTS -->
-<section class="py-5">
-
-    <div class="container">
-
-        <!-- Loading message -->
-        <div id="loading" class="text-center">
-
-            <div class="spinner-border text-primary" role="status">
-            </div>
-
-            <p class="mt-2">
-                Loading posts...
+            <p class="text-muted">
+                Read the latest weather information and updates.
             </p>
 
         </div>
 
-
-        <!-- Error message -->
-        <div
-            id="errorMessage"
-            class="alert alert-danger d-none">
-        </div>
+    </section>
 
 
-        <!-- Bootstrap Grid -->
-        <div
-            id="postsContainer"
-            class="row g-4">
-        </div>
 
-    </div>
+    <!-- ========================= -->
+    <!-- POSTS -->
+    <!-- ========================= -->
 
-</section>
+    <section class="py-5">
 
-<div
-    class="modal fade"
-    id="loginModal"
-    tabindex="-1"
-    aria-hidden="true"
->
+        <div class="container">
 
-    <div class="modal-dialog modal-dialog-centered">
 
-        <div class="modal-content">
+            <!-- LOADING -->
 
-            <div class="modal-header bg-primary text-white">
+            <div id="loading" class="text-center">
 
-                <h5 class="modal-title">
-                    Welcome Back ☁️
-                </h5>
+                <div class="spinner-border text-primary" role="status">
 
-                <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                ></button>
+                    <span class="visually-hidden">
+                        Loading...
+                    </span>
+
+                </div>
+
+                <p class="mt-2">
+                    Loading posts...
+                </p>
 
             </div>
 
 
-            <div class="modal-body">
+            <!-- ERROR -->
 
-                <form id="loginForm">
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="loginEmail"
-                            class="form-control"
-                            placeholder="Enter your email"
-                        >
-
-                    </div>
+            <div id="errorMessage" class="alert alert-danger d-none" role="alert">
+            </div>
 
 
-                    <div class="mb-3">
+            <!-- POSTS CONTAINER -->
 
-                        <label class="form-label">
-                            Password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="loginPassword"
-                            class="form-control"
-                            placeholder="Enter your password"
-                        >
-
-                    </div>
-
-
-                    <div
-                        id="loginMessage"
-                        class="small mb-3"
-                    ></div>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary w-100"
-                    >
-                        Login
-                    </button>
-
-                </form>
-
+            <div id="postsContainer" class="row g-4">
             </div>
 
         </div>
 
-    </div>
-
-</div>
-<!-- SIGN UP MODAL -->
-
-<div
-    class="modal fade"
-    id="signupModal"
-    tabindex="-1"
-    aria-hidden="true"
->
-
-    <div class="modal-dialog modal-dialog-centered">
-
-        <div class="modal-content">
-
-            <div class="modal-header bg-tertiary text-white">
-
-                <h5 class="modal-title">
-                    Join WeatherNow 🌦️
-                </h5>
-
-                <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                ></button>
-
-            </div>
+    </section>
 
 
-            <div class="modal-body">
 
-                <form id="signupForm">
+    <!-- ========================= -->
+    <!-- LOGIN MODAL -->
+    <!-- ========================= -->
 
-                    <div class="mb-3">
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
 
-                        <label class="form-label">
-                            Full Name
-                        </label>
+        <div class="modal-dialog modal-dialog-centered">
 
-                        <input
-                            type="text"
-                            id="signupName"
-                            class="form-control"
-                            placeholder="Enter your name"
-                        >
-
-                    </div>
+            <div class="modal-content">
 
 
-                    <div class="mb-3">
+                <div class="modal-header bg-primary text-white">
 
-                        <label class="form-label">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="signupEmail"
-                            class="form-control"
-                            placeholder="Enter your email"
-                        >
-
-                    </div>
+                    <h5 class="modal-title">
+                        Welcome Back ☁️
+                    </h5>
 
 
-                    <div class="mb-3">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
 
-                        <label class="form-label">
-                            Password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="signupPassword"
-                            class="form-control"
-                            placeholder="Create a password"
-                        >
-
-                    </div>
+                </div>
 
 
-                    <div class="mb-3">
+                <div class="modal-body">
 
-                        <label class="form-label">
-                            Confirm Password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            class="form-control"
-                            placeholder="Confirm your password"
-                        >
-
-                    </div>
+                    <form id="loginForm">
 
 
-                    <div
-                        id="signupMessage"
-                        class="small mb-3"
-                    ></div>
+                        <div class="mb-3">
+
+                            <label class="form-label" for="loginEmail">
+                                Email Address
+                            </label>
+
+                            <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email">
+
+                        </div>
 
 
-                    <button
-                        type="submit"
-                        class="btn btn-warning w-100"
-                    >
-                        Create Account
-                    </button>
+                        <div class="mb-3">
 
-                </form>
+                            <label class="form-label" for="loginPassword">
+                                Password
+                            </label>
+
+                            <input type="password" id="loginPassword" class="form-control"
+                                placeholder="Enter your password">
+
+                        </div>
+
+
+                        <div id="loginMessage" class="small mb-3"></div>
+
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Login
+                        </button>
+
+                    </form>
+
+                </div>
 
             </div>
 
@@ -358,26 +285,147 @@
 
     </div>
 
-</div>
-<!-- Footer -->
-
-<!-- FOOTER -->
-<footer class="bg-primary text-white text-center py-4">
-
-    <p class="mb-0">
-        © 2026 WeatherNow | All Rights Reserved
-    </p>
-
-</footer>
 
 
-<!-- Bootstrap JavaScript -->
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-</script>
+    <!-- ========================= -->
+    <!-- SIGN UP MODAL -->
+    <!-- ========================= -->
 
-<!-- Your JavaScript -->
-<script src="js/posts.js"></script>
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <div class="modal-header bg-primary text-white">
+
+                    <h5 class="modal-title">
+                        Join WeatherNow 🌦️
+                    </h5>
+
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <form id="signupForm">
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label" for="signupName">
+                                Full Name
+                            </label>
+
+                            <input type="text" id="signupName" class="form-control" placeholder="Enter your name">
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label" for="signupEmail">
+                                Email Address
+                            </label>
+
+                            <input type="email" id="signupEmail" class="form-control" placeholder="Enter your email">
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label" for="signupPassword">
+                                Password
+                            </label>
+
+                            <input type="password" id="signupPassword" class="form-control"
+                                placeholder="Create a password">
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label" for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <input type="password" id="confirmPassword" class="form-control"
+                                placeholder="Confirm your password">
+
+                        </div>
+
+
+                        <div id="signupMessage" class="small mb-3"></div>
+
+
+                        <button type="submit" class="btn btn-warning w-100">
+                            Create Account
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer class="bg-primary text-white text-center py-4">
+
+        <div class="container">
+
+            <p class="mb-0">
+                © 2026 WeatherNow | All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================= -->
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- ========================= -->
+    <!-- THEME JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="js/theme.js"></script>
+
+
+    <!-- ========================= -->
+    <!-- POSTS JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="js/posts.js"></script>
+
+
+    <!-- ========================= -->
+    <!-- AUTH JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="js/auth.js"></script>
+
 
 </body>
 
