@@ -1,2 +1,2 @@
-Grop 3 weather-website-vickybrown
+Group 3 weather-website-vickybrown
 3347 -student number
